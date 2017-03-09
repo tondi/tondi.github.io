@@ -1,0 +1,150 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Click n Slide Tondos 3Ia</title>
+        <script src="js/js.js"></script>
+        
+        <style>
+            
+            body{
+		        font-family: 'Calibri';
+                background-color: rgb(52, 52, 52);
+            }
+            #okno{
+				margin: 0 auto;
+				width: 1024px;
+            }
+			.komorka{
+				margin: 0;
+                margin-top: -3px;
+				display: inline-block;
+				background-image: url(img/starWars.jpg);
+				background-repeat: no-repeat;
+			}
+            .komorkaZewnetrzna{
+             	margin: 0;
+                margin-top: -5px;
+				display: inline-block;
+                box-shadow: 0px 0px 20px 0px;
+			    
+            }
+            
+            
+            #imgNagl{
+                margin: 0 auto;
+                width: 200px;
+            }
+            #buttony{
+                margin-top: 50px;
+
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            button{
+                margin: 0 auto;
+                text-align: center;
+                font-size: 1em;
+                padding: 5px;
+                margin: 5px;
+            }
+            .pusta{
+                margin: 0;
+                margin-top: -5px;
+				display: inline-block;
+                
+            }
+            /*Overlay CSS*/
+            .overlay {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+
+            .overlay-content {
+                position: relative;
+                top: 25%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+                padding: 50px;
+                text-decoration: none;
+                
+                color: #818181;
+                display: block;
+                font-size: 4em;
+
+            }
+            .overlay-content input{
+                text-align: center;
+                font-size: 1em;
+            }
+           
+            .overlay .closebtn {
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+            }
+
+            @media screen and (max-height: 450px) {
+              .overlay {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+              }
+            }
+            #czas{
+                text-align: center;
+                padding-bottom: 20px;
+                
+            }
+            #czas div{
+                display: inline;
+                
+            }
+            #czas div img{
+                width: 20px;
+            }
+            #wyniki{
+                background-color: rgba(0,0,0,0.4);
+                width: 400px;
+                height: 1320px;
+                box-shadow: 0px 0 15px black;
+                font-size: 2em;
+                position: absolute;
+                right: 0px;
+                top: 50px;
+                color: white;
+                text-align: center;
+                padding: 20px;
+            }
+            .mySlides{
+                width: 200px;
+                display:inline-block;
+            }
+            #box{
+                margin: 0 auto;
+                width:200px;
+                height:200px;
+                overflow: hidden;
+            }
+            #box:first-child{
+                color:red;
+            }
+            
+        /*End overlay */
+        </style>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
