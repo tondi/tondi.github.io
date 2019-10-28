@@ -1,0 +1,105 @@
+﻿<!doctype HTML>
+<html>
+
+<head>
+    <title>THREE</title>
+    <script src="js/three.js"></script>
+    <script src="js/LevelData.js"></script>
+    <script src="js/Level.js"></script>
+    <script src="js/Utils.js"></script>
+    <script src="js/Ui.js"></script>
+    <script src="js/MyLight.js"></script>
+    <script src="js/Fire.js"></script>
+    <script src="js/Laser.js"></script>
+    <script src="js/Stats.js"></script>
+    <script>
+        var level;
+        var mylight;
+        var leveldata;
+        var utils;
+        var ui;
+        var fire;
+        var laser;
+        window.onload = function() {
+
+            //// Nie dziala klikanie przy generowaniu planszy na ostatni
+            leveldata = new LevelData();
+            level = new Level();
+            mylight = new MyLight();
+            utils = new Utils();
+            laser = new Laser();
+            ui = new Ui();
+
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Lato, Roboto, Courier New;
+            color: white;
+        }
+        
+        #main {
+            position: absolute;
+        }
+        
+        .menuElement {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .menuElement>* {
+            /*flex: 1;*/
+            width: 10%;
+            margin: 5%;
+        }
+        
+        #overlay {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 1);
+            z-index: 123;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overlay__help.overlay__help {
+                margin-top: auto;
+    /* margin-bottom: 1em; */
+    text-align: center;
+    margin: initial;
+    margin-bottom: 1em;
+        }
+        
+        .overlay__loading{
+            margin: auto;
+        }
+        
+        .visible {
+            visibility: visible;
+        }
+        
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay">
+        <div class="overlay__loading"v>Ładuję geometrie i tekstury...</div>
+        <div class="overlay__help">
+            <div>WASD - move</div>
+            <div>Spacebar - attack</div>
+            <div>Arrows move camera</div>
+        </div>
+    </div>
+    <div id="main">
+
+    </div>
+
+</body>
+
+</html>
