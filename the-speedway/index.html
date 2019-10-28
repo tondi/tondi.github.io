@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Speedway</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            background: black;
+            font-size: 2em;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .container {
+            margin: auto;
+        }
+        
+        canvas {
+            margin: auto;
+            background: white content-box;
+            /*background-clip: content-box;*/
+            /*box-shadow: 1px 5px 50px #004138;*/
+        }
+        
+        .overlay {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+        }
+        
+        .overlay_content {
+            margin: auto;
+        }
+        
+        .visible {
+            display: initial;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script defer src="board.js"></script>
+    <script defer src="player.js"></script>
+    <script defer src="UI.js"></script>
+    <script>
+        this.init = function init() {
+            var board = new Board();
+            board.draw();
+
+            var p1 = new Player();
+            // There is a need for "r" value to be over 40. Collision is recognized by color < 40 (why 40?)
+            p1.add("200,50,50", [400, 500]);
+            p1.setMoves("a", "d");
+
+            var p2 = new Player();
+            p2.add("50,100,50", [400, 530]);
+            p2.setMoves("ArrowLeft", "ArrowRight");
+
+            var p3 = new Player();
+            p3.add("50,50,200", [400, 560]);
+            p3.setMoves("4", "6");
+
+            // console.log(p1);
+            (function animateScene() {
+                p1.refresh();
+                p2.refresh();
+                p3.refresh();
+
+                requestAnimationFrame(animateScene)
+
+
+            }())
+        }
+    </script>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="overlay_content">
+            Press space to play
+        </div>
+    </div>
+    <div class="container hidden">
+        <canvas width="1200" height="600">
+            
+            Your browser does not support the HTML 5 Canvas. 
+            
+        </canvas>
+        <div class="info">
+            <div>
+                Red: A Key | Green: Left Arrow | Blue: Num Left Arrow
+
+            </div>
+            <div>Last player wins</div>
+        </div>
+    </div>
+</body>
+
+</html>
